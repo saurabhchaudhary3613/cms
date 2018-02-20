@@ -1,0 +1,46 @@
+{
+    "topic": {
+      "displayOrder": 1,
+      "title": "Way to Save",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
+      "sections": [
+        {
+          "displayOrder": 1,
+          "description": "Kitchen",
+          "titles": [
+            {
+              "displayOrder": 1,
+              "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+              "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+              "link": {
+                "text": "test",
+                "url": "test url"
+              },
+              "approval": "Sapient",
+              "household": "Condo",
+              "season": {
+                "name": "Summer",
+                "start": "01-10-2017",
+                "end": "01-10-2017"
+              },
+              "cluster": "cluster1",
+              "delivery": [
+                "Monday",
+                "Tuesday"
+              ],
+              "time": [
+                "Morning",
+                "Noon"
+              ],
+              "frequency": "Daily",
+              "type": "Today's Drawer",
+              "responseOptions": [
+                "Yes",
+                "No"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }

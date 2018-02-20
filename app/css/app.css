@@ -1,0 +1,140 @@
+/* app css stylesheet */
+
+
+.cms-header {
+  font-size: 24px;
+  background: grey;
+  color: #fff;
+  padding: 15px;
+}
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li + li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+.cms-nav {
+  background: #e7e7e7;
+  width: 100%;
+  display: inline-block;
+}
+.cms-nav ul{ 
+  list-style: none;
+}
+.cms-nav ul li{
+  float: left;
+  padding: 5px;
+  font-size: 14px;
+} 
+.cms-nav ul li a {
+  border-right: 1px solid grey;
+  padding-right: 10px;
+}
+.cms-nav ul li a.last {
+  border-right: none;
+}
+
+.cms-body-container {
+  padding: 10px;
+  border: 1px solid grey;
+  float: left;
+  width: 98%;
+  margin-bottom: 20px;
+}
+
+/*CMS form CSS Starts*/
+.form-section {
+  border-bottom: 1px dotted grey;
+  margin: 10px 0 10px 0;
+  float: left;
+  width: 98%;
+}
+.cms-form-label {
+  float: left;
+  width:12%;
+}
+.cms-form-control {
+  margin-left: 5px;
+}
+.form-group {
+  margin-bottom: 5px;
+}
+.checkbox-group {
+  float: left;
+  width: 85%;
+}
+.chk-holder {
+  float:left;
+  margin-right: 20px;
+}
+.chk-holder .chk-cms {
+  margin-top:0;
+}
+.time-chk-holder {
+  float: left;
+  width: 100%;
+}
+.chk-holder span {
+  margin-right:3px;
+}
+.action-container {
+  float: left;
+  width: 100%;
+  text-align: center;
+}
+.required-indicator {
+  float: right;
+  width: 25%;
+  font-size: 11px;
+  margin-top: -12px;
+  color: red;
+  text-align: right;
+}
+.required-indicator span {
+  font-size: 14px;
+}
+
+.required {
+  font-size: 16px;
+  color: red;
+  float: left;
+  margin: 2px 2px 0 0;
+}
+.update-link-top {
+  float: left;
+  width: 30%;
+  color: #0088cc;
+  text-decoration: underline;
+  cursor: pointer;
+  text-align: right;
+  margin-bottom: 10px;
+}
+/*CMS form CSS Ends*/
+
+.cms-footer {
+  font-size: 24px;
+  background: grey;
+  color: #fff;
+  padding: 15px;
+  position: absolute;
+  bottom: 0;
+  width: 63.2%;
+}

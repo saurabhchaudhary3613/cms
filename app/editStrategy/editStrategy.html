@@ -1,0 +1,180 @@
+<div class="strategy-form-container">
+    <div class="update-link-top" ng-click="ctrl.updateInfo()">Update Information</div>
+    <div class="required-indicator"><span>*</span>Required fields</div>
+    <div class="form-section">
+        <div class="form-group">
+            <label class="cms-form-label"><span class="required">*</span>Topic</label>
+            <select required class="form-control cms-form-control" ng-disabled="ctrl.disableField">
+                <option>Topic 1</option>
+                <option>Topic 1</option>
+                <option>Topic 1</option>
+            </select>
+                    
+        </div>
+        <div class="form-group">
+            <label class="cms-form-label">Description</label>
+            <textarea class="form-control cms-form-control" ng-model="ctrl.strategyDetails.description" ng-disabled="ctrl.disableField" rows="2" cols="80">
+            </textarea>
+                    
+        </div>
+    </div>
+    <div class="form-section">
+        <div class="form-group">
+            <label class="cms-form-label">Topic</label>
+            <select ng-disabled="ctrl.disableField" class="form-control cms-form-control">
+                <option>Topic 1</option>
+                <option>Topic 2</option>
+                <option>Topic 3</option>
+            </select>
+                    
+        </div>
+        <div class="form-group">
+            <label class="cms-form-label"><span class="required">*</span>Section</label>
+            <select ng-disabled="ctrl.disableField" required class="form-control cms-form-control" multiple>
+                <option>Section 1</option>
+                <option>Section 1</option>
+                <option>Section 1</option>
+            </select>
+                    
+        </div>
+    </div>
+    <div class="form-section">
+        <div class="form-group">
+            <label class="cms-form-label">Section</label>
+            <select ng-disabled="ctrl.disableField" class="form-control cms-form-control">
+                    <option>Topic 1</option>
+                    <option>Topic 2</option>
+                    <option>Topic 3</option>
+                </select>
+        </div>
+        <div class="form-group">
+            <label class="cms-form-label">Title</label>
+            <select ng-disabled="ctrl.disableField" class="form-control cms-form-control" multiple>
+                <option>Title 1</option>
+                <option>Title 2</option>
+                <option>Title 3</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="cms-form-label"><span class="required">*</span>Intro</label>
+            <textarea ng-disabled="ctrl.disableField" ng-model="ctrl.strategyDetails.intro" required class="form-control cms-form-control" rows="2" cols="80"></textarea>    
+        </div>
+        <div class="form-group">
+            <label class="cms-form-label">body</label>
+            <textarea ng-disabled="ctrl.disableField"  ng-model="ctrl.strategyDetails.body" class="form-control cms-form-control" rows="2" cols="80">
+            </textarea>
+                    
+        </div>
+        <div class="form-group">
+            <label class="cms-form-label">Link</label>
+            <input type="text" ng-disabled="ctrl.disableField" ng-model="ctrl.strategyDetails.linkText" placeholder="test"/>
+            <input type="url" ng-disabled="ctrl.disableField" ng-model="ctrl.strategyDetails.linkURL" class="cms-form-control" placeholder="Url">        
+        </div>
+        <div class="form-group">
+            <label class="cms-form-label">Approval</label>
+            <select class="form-control cms-form-control" ng-disabled="ctrl.disableField">
+                    <option>Sapient</option>
+                    <option>Oshawa</option>
+                </select>
+        </div>
+        <div class="form-group">
+            <label class="cms-form-label">Household</label>
+            <select class="form-control cms-form-control" ng-disabled="ctrl.disableField">
+                <option>House</option>
+                <option>Condo</option>
+            </select>
+        </div>
+        <div class="season-date-container">
+            <div class="form-group">
+                <label class="cms-form-label">Season</label>
+                <select class="form-control cms-form-control" ng-disabled="ctrl.disableField">
+                    <option>Summer</option>
+                    <option>Spring</option>
+                    <option>Winter</option>
+                    <option>Autumn</option>
+                </select>
+            </div>
+            <div class="form-group start-date">
+                <label class="cms-form-label">Start Date</label>
+                <input type="date" ng-disabled="ctrl.disableField"/>
+            </div>
+            <div class="form-group start-end">
+                <label class="cms-form-label">End Date</label>
+                <input type="date" ng-disabled="ctrl.disableField"/>
+            </div>
+        </div>
+        
+    </div>
+    <div class="form-section">
+        <div class="form-group">
+            <label class="cms-form-label"><span class="required">*</span>Delivery</label>
+            <div class="checkbox-group">
+                <div class="chk-holder"><span>D1</span><input class="form-check-input chk-cms" type="checkbox" value="" ng-disabled="ctrl.disableField" /></div>
+                <div class="chk-holder"><span>D2</span><input class="form-check-input chk-cms" type="checkbox" value="" ng-disabled="ctrl.disableField" /></div>
+                <div class="chk-holder"><span>D3</span><input class="form-check-input chk-cms" type="checkbox" value="" ng-disabled="ctrl.disableField" /></div>
+                
+            </div>
+        </div>
+        <div class="form-group time-chk-holder">
+            <label class="cms-form-label"><span class="required">*</span>Time</label>
+            <div class="checkbox-group">
+                <div class="chk-holder"><span>Morning</span><input class="form-check-input chk-cms" type="checkbox" value="" ng-disabled="ctrl.disableField" /></div>
+                <div class="chk-holder"><span>Noon</span><input class="form-check-input chk-cms" type="checkbox" value="" ng-disabled="ctrl.disableField" /></div>
+                <div class="chk-holder"><span>Evening</span><input class="form-check-input chk-cms" type="checkbox" value="" ng-disabled="ctrl.disableField" /></div>
+                <div class="chk-holder"><span>Before Dusk</span><input class="form-check-input chk-cms" type="checkbox" value="" ng-disabled="ctrl.disableField" /></div>                
+            </div>
+        </div>
+        <div class="form-group time-chk-holder">
+            <label class="cms-form-label"><span class="required">*</span>Frequency</label>
+            <div class="checkbox-group">
+                <div class="chk-holder"><span>Daily</span><input class="form-check-input chk-cms" type="checkbox" value="" ng-disabled="ctrl.disableField" /></div>
+                <div class="chk-holder"><span>Weekly</span><input class="form-check-input chk-cms" type="checkbox" value="" ng-disabled="ctrl.disableField" /></div>
+                <div class="chk-holder"><span>Monthly</span><input class="form-check-input chk-cms" type="checkbox" value="" ng-disabled="ctrl.disableField" /></div>
+                <div class="chk-holder"><span>Once</span><input class="form-check-input chk-cms" type="checkbox" value="" ng-disabled="ctrl.disableField" /></div>                
+            </div>
+        </div>
+        <div class="form-group time-chk-holder">
+            <label class="cms-form-label"><span class="required">*</span>Type</label>
+            <div class="checkbox-group">
+                <div class="chk-holder"><span>Todays Drawer</span><input class="form-check-input chk-cms" type="checkbox" value="" ng-disabled="ctrl.disableField" /></div>
+                <div class="chk-holder"><span>Top Tier Tip</span><input class="form-check-input chk-cms" type="checkbox" value="" ng-disabled="ctrl.disableField" /></div>
+                <div class="chk-holder"><span>Mid-Top Tier Tip</span><input class="form-check-input chk-cms" type="checkbox" value="" ng-disabled="ctrl.disableField" /></div>
+                <div class="chk-holder"><span>InApp Message</span><input class="form-check-input chk-cms" type="checkbox" value="" ng-disabled="ctrl.disableField" /></div>
+                <div class="chk-holder"><span>High Usage</span><input class="form-check-input chk-cms" type="checkbox" value="" ng-disabled="ctrl.disableField" /></div>                
+            </div>
+        </div>
+        <div class="form-group time-chk-holder">
+            <label class="cms-form-label">Response Options</label>
+            <div class="checkbox-group">
+                <div class="chk-holder"><span>Yes</span><input class="form-check-input chk-cms" type="checkbox" value="" ng-disabled="ctrl.disableField" /></div>
+                <div class="chk-holder"><span>No</span><input class="form-check-input chk-cms" type="checkbox" value="" ng-disabled="ctrl.disableField" /></div>
+                <div class="chk-holder"><span>Save</span><input class="form-check-input chk-cms" type="checkbox" value="" ng-disabled="ctrl.disableField" /></div>
+                <div class="chk-holder"><span>Done</span><input class="form-check-input chk-cms" type="checkbox" value="" ng-disabled="ctrl.disableField" /></div>
+                <div class="chk-holder"><span>Remind me</span><input class="form-check-input chk-cms" type="checkbox" value="" ng-disabled="ctrl.disableField" /></div>                
+            </div>
+        </div>
+    </div>
+    <div class="form-section">
+        <div class="form-group">
+            <label class="cms-form-label">Title</label>
+            <select class="form-control cms-form-control" ng-disabled="ctrl.disableField">
+                <option>Title 1</option>
+                <option>Title 2</option>
+                <option>Title 3</option>
+                <option>Title 4</option>
+            </select>
+        </div>
+        <div class="form-group">
+                <label class="cms-form-label">Homepage Tip</label>
+                <input type="text" class="form-control cms-form-control" ng-disabled="ctrl.disableField"/>
+            </div>
+    </div>
+    <div class="action-container">
+            <div class="update-link-top" ng-click="ctrl.updateInfo()">Update Information</div>
+        <button type="submit" class="btn btn-primary" ng-disabled="ctrl.disableField">Submit</button>
+    </div>
+    
+
+    
+
+</div>
