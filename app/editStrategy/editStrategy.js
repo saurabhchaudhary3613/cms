@@ -48,8 +48,8 @@ function delegateFunction($scope, $http) {
       vm.strategyDetails.linkText = strategyData.sections[0].titles[0].link.text;
       vm.strategyDetails.linkURL = strategyData.sections[0].titles[0].link.url;
 
-      vm.strategyDetails.startDate = strategyData.sections[0].titles[0].season.start;
-      vm.strategyDetails.endDate = strategyData.sections[0].titles[0].season.end;
+      vm.strategyDetails.startDate = new Date (strategyData.sections[0].titles[0].season.start);
+      vm.strategyDetails.endDate = new Date(strategyData.sections[0].titles[0].season.end);
 
       //console.log("sa",vm.strategyDetails.description);
 

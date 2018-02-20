@@ -20,8 +20,8 @@
               "household": "Condo",
               "season": {
                 "name": "Summer",
-                "start": "01-10-2017",
-                "end": "01-10-2017"
+                "start": "10-10-2017",
+                "end": "01-05-2018"
               },
               "cluster": "cluster1",
               "delivery": [
