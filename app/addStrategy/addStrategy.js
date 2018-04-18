@@ -16,7 +16,7 @@ function delegateFunction($scope) {
   
 
   vm.initialize = function () {
-    console.log("addStrategy...")
+    console.log("addStrategy...New")
   };
   
   vm.initialize();
