@@ -1,6 +1,45 @@
-<p>This is the partial for Dashboard
-    {{ctrl.name.fname}}
-    <input ng-model="ctrl.name.fname"/>
-    <input type="button" value="Click Me" ng-click="ctrl.submitData();"/>
-    
-</p>
+<div class="dashboard-container">
+    <!-- <div class="page-title"></div> -->
+    <div class="dashboard-info">
+        <label class="left">Active Customer</label>
+        <label class="right">{{ctrl.dasboardInfo.activeCustomer}}</label>
+    </div>
+    <div class="dashboard-info">
+        <label class="left">Inactive Customers</label>
+        <label class="right">{{ctrl.dasboardInfo.inActiveCustomer}}</label>
+    </div>
+    <div class="dashboard-info">
+        <label class="left">App Accessed </label>
+        <div class="list-view">
+            <ul>
+                <li>
+                    <label class="left">Today</label><label>{{ctrl.dasboardInfo.appAccessedToday}}</label>
+                </li>
+                <li>
+                    <label class="left">Yesterday</label><label>{{ctrl.dasboardInfo.appAccessedYesterday}}</label>
+                </li>
+                <li>
+                    <label class="left">Weekly</label><label>{{ctrl.dasboardInfo.appAccessedWeekly}}</label>
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div class="dashboard-info">
+        <label class="left">Last Weather feed</label>
+        <label class="right">{{ctrl.dasboardInfo.lastWeatherFeed}}</label>
+    </div>
+    <div class="dashboard-info">
+            <label class="left">Last Ussage file</label>
+            <label class="right">{{ctrl.dasboardInfo.lastUssageFile}}</label>
+        </div>
+    <div class="dashboard-info">
+        <label class="left">App Installation</label>
+        <label class="right">{{ctrl.dasboardInfo.appInstallation}}</label>
+    </div>
+    <div class="dashboard-info dashboard-info-last">
+        <label class="left">Access Devices</label>
+        <label class="right">{{ctrl.dasboardInfo.accessDevice}}</label>
+    </div>
+
+</div>

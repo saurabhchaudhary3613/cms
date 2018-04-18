@@ -12,7 +12,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
-  <link href="bower_components/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
+  <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" media="screen">
+  <!-- <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/angular-ui/bower-ui-grid/master/ui-grid.min.css"> -->
+  <link rel="stylesheet" type="text/css" href="bower_components/angular-ui-grid/ui-grid.css">
+  
   
   <link rel="stylesheet" href="css/app.css">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
@@ -20,23 +23,59 @@
 <body>
   
   
-      <div class="container">
+      <div class="container-fluid">
 
-        <header class=cms-header>CMS Header</header>
+        <header class=cms-header>
+            <div class="cms-logo">CMS</div>
+            <div class="user-name">Welcome Test User !</div>
+            <div class="login-date">Wed Jan 17th, 2018</div>
+            <div class="left-options">
+                <span>Account</span><span class="seprator">|</span><span>Logout</span>
+            </div>
+        </header>
 
         <div class="cms-nav">
           
-            <ul>
-                <!-- <li><a href="#!/view1">view1</a></li>
-                <li><a href="#!/view2">view2</a></li> -->
-                <li><a href="#!/dashboard">Dashboard</a></li>
-                <li><a href="#!/customer">Customer</a></li>
-                <li><a href="#!/addStrategy">Add New Strategy</a></li>
-                <li><a href="#!/editStrategy">Edit/view Strategy</a></li>
-                <li><a href="#!/messaging">Messaging</a></li>
-                <li><a href="#!/tracking">Tracking</a></li>
-                <li><a href="#!/analytics">Analytics</a></li>
-            </ul>
+            <div class="row-fluid">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav">
+                            
+                            <!-- <li><a href="#!/view1">view1</a></li>
+                            <li><a href="#!/view2">view2</a></li> -->
+                            <li class="nav-item"><a class="nav-link active" href="#!/dashboard">Dashboard</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#!/customer">Customer</a></li>
+                            <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      Strategy
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                      <a class="dropdown-item" href="#!/viewStrategy">View Strategy</a>
+                                      <a class="dropdown-item" href="#!/addStrategy">Add New Strategy</a>
+                                      <a class="dropdown-item" href="#!/searchStrategy">Search Strategy</a>
+                                    </div>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="#!/messaging">Messaging</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#!/tracking">Tracking</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#!/analytics">Analytics</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle last" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Help Question
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                  <a class="dropdown-item" href="#!/viewQuestion">View Questons</a>
+                                  <a class="dropdown-item" href="#!/addQuestion">Add New Question</a>
+                                  <a class="dropdown-item" href="#!/searchQuestion">Search Question</a>
+                                </div>
+                            </li>
+                            
+                        </div>
+                    </div>
+                </nav>
+                </div>
           
         </div>
 
@@ -65,8 +104,10 @@
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
 
-  <script src="http://code.jquery.com/jquery.js"></script>
-  <script src="bower_components/bootstrap/js/bootstrap.js"></script>
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <!-- <script src="https://cdn.rawgit.com/angular-ui/bower-ui-grid/master/ui-grid.min.js"></script> -->
+  <script src="bower_components/angular-ui-grid/ui-grid.js"></script>
 
 
   <!-- Application js dependiencies -->
@@ -76,8 +117,16 @@
   <script src="view2/view2.js"></script>
   <script src="dashboard/dashboard.js"></script>
   <script src="customer/customer.js"></script>
+  <script src="viewStrategy/viewstrategy.js"></script>
   <script src="addStrategy/addstrategy.js"></script>
   <script src="editStrategy/editStrategy.js"></script>
+  <script src="searchStrategy/searchStrategy.js"></script>
+
+  <script src="helpQuestion/viewQuestion.js"></script>
+  <script src="helpQuestion/addQuestion.js"></script>
+  <script src="helpQuestion/editQuestion.js"></script>
+  <script src="helpQuestion/searchQuestion.js"></script>
+
   <script src="messaging/messaging.js"></script>
   <script src="tracking/tracking.js"></script>
   <script src="analytics/analytics.js"></script>

@@ -1,0 +1,56 @@
+<div class="strategy-form-container">
+    <form name="ctrl.searchStrategyForm" novalidate>
+        <div class="page-title"> Search Strategies</div>
+        <hr>
+        
+        <div class="">
+            <div class="form-group">
+                <label class="cms-form-label">Category</label>
+                
+                <select required class="cms-form-control search-select">
+                    <option>Category</option>
+                </select>
+                        
+            </div>
+            <div class="form-group">
+                <label class="cms-form-label">Find</label>
+                <select required class="cms-form-control search-select">
+                    <option></option>
+                </select>
+                <input type="text" />
+            </div>
+            <div class="form-group">
+                <label class="cms-form-label">Household</label>
+                <select class=" cms-form-control search-select">
+                    <option value="house">House</option>
+                </select>
+                <input type="text" />
+            </div>
+            
+            <div class="form-group">
+                <label class="cms-form-label">Season</label>
+                <select class=" cms-form-control search-select">
+                    <option value=""></option>
+                </select>
+                <input type="text" />
+            </div>
+            <div class="form-group time-chk-holder">
+                <label class="cms-form-label">Type</label>
+                <div class="checkbox-group">
+                    <div class="chk-holder"><span>Todays Drawer</span><input class=" chk-cms" ng-checked='ctrl.strategyDetails.type1' type="checkbox" ng-model= "ctrl.strategyDetails.type1"  ng-true-value="'Todays Drawer'" ng-disabled="ctrl.disableField" /></div>
+                    <div class="chk-holder"><span>Top Tier Tip</span><input class=" chk-cms" ng-checked='ctrl.strategyDetails.type2'  type="checkbox" ng-model= "ctrl.strategyDetails.type2"  ng-true-value="'Top Tier Tip'" value="" ng-disabled="ctrl.disableField" /></div>
+                    <div class="chk-holder"><span>Mid-Top Tier Tip</span><input class=" chk-cms" ng-checked='ctrl.strategyDetails.type3'  type="checkbox" ng-model= "ctrl.strategyDetails.type3"  ng-true-value="'Mid Top Tier Tip'" ng-disabled="ctrl.disableField" /></div>
+                    <div class="chk-holder"><span>InApp Message</span><input class=" chk-cms" ng-checked='ctrl.strategyDetails.type4'  type="checkbox" ng-model= "ctrl.strategyDetails.type4"  ng-true-value="'InApp Message'" ng-disabled="ctrl.disableField" /></div>
+                    <div class="chk-holder"><span>High Usage</span><input class=" chk-cms" ng-checked='ctrl.strategyDetails.type5'  type="checkbox" ng-model= "ctrl.strategyDetails.type5"  ng-true-value="'High Usage'" ng-disabled="ctrl.disableField" /></div>                
+                </div>
+            </div>
+            
+        </div>
+        <div class="search-btn-container">
+            <button type="button" class="btn btn-primary btn-sm" ng-click="ctrl.searchDetails()">Search</button>
+        </div>
+    </form>
+    <hr>
+    <div ui-grid="gridOptions" id="view-stragegy-grid" class="grid"></div>
+    <div class="no-data-txt" ng-if="ctrl.searchData.length === 0">No Records Found</div>
+</div>

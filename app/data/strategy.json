@@ -1,46 +1,159 @@
 {
-    "topic": {
-      "displayOrder": 1,
-      "title": "Way to Save",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
-      "sections": [
-        {
-          "displayOrder": 1,
-          "description": "Kitchen",
-          "titles": [
-            {
-              "displayOrder": 1,
-              "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
-              "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
-              "link": {
-                "text": "test",
-                "url": "test url"
-              },
-              "approval": "Sapient",
-              "household": "Condo",
-              "season": {
-                "name": "Summer",
-                "start": "10-10-2017",
-                "end": "01-05-2018"
-              },
-              "cluster": "cluster1",
-              "delivery": [
-                "Monday",
-                "Tuesday"
-              ],
-              "time": [
-                "Morning",
-                "Noon"
-              ],
-              "frequency": "Daily",
-              "type": "Today's Drawer",
-              "responseOptions": [
-                "Yes",
-                "No"
-              ]
-            }
-          ]
-        }
-      ]
-    }
+  "topic": {
+    "displayOrder": 1,
+    "title": "Way to Save",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
+    "sections": [
+      {
+        "displayOrder": 1,
+        "sectionTitle": "Cooling",
+        "titles": [
+          {
+            "displayOrder": 1,
+            "name": "CIF001",
+            "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+            "link": {
+              "text": "test",
+              "url": "https://www.google.co.in/"
+            },
+            "approval": "Sapient",
+            "household": "Condo",
+            "season": {
+              "name": "Summer",
+              "start": "10-10-2017",
+              "end": "01-05-2018"
+            },
+            "cluster": "cluster1"
+            
+          },
+          {
+            "displayOrder": 2,
+            "name": "EIA001",
+            "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+            "link": {
+              "text": "test",
+              "url": "https://www.google.co.in/"
+            },
+            "approval": "Sapient",
+            "household": "Condo",
+            "season": {
+              "name": "Summer",
+              "start": "15-05-2018",
+              "end": "01-10-2018"
+            },
+            "cluster": "cluster1"
+            
+          },
+          {
+            "displayOrder": 3,
+            "name": "EIA001",
+            "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+            "link": {
+              "text": "test",
+              "url": "https://www.google.co.in/"
+            },
+            "approval": "Sapient",
+            "household": "Condo",
+            "season": {
+              "name": "Summer",
+              "start": "15-05-2018",
+              "end": "01-10-2018"
+            },
+            "cluster": "cluster1"
+            
+          }
+        ]
+      },
+      {
+        "displayOrder": 2,
+        "sectionTitle": "Electronics",
+        "titles": [
+          {
+            "displayOrder": 1,
+            "name": "CIF001",
+            "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+            "link": {
+              "text": "test",
+              "url": "https://www.google.co.in/"
+            },
+            "approval": "Sapient",
+            "household": "Condo",
+            "season": {
+              "name": "Summer",
+              "start": "10-10-2017",
+              "end": "01-05-2018"
+            },
+            "cluster": "cluster1"
+          },
+          {
+            "displayOrder": 2,
+            "name": "AIF001",
+            "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+            "link": {
+              "text": "test",
+              "url": "https://www.google.co.in/"
+            },
+            "approval": "Sapient",
+            "household": "Condo",
+            "season": {
+              "name": "Summer",
+              "start": "10-10-2017",
+              "end": "01-05-2018"
+            },
+            "cluster": "cluster1"
+          }
+        ]
+      },
+      {
+        "displayOrder": 3,
+        "sectionTitle": "Appliance",
+        "titles": [
+          {
+            "displayOrder": 1,
+            "name": "AIF001",
+            "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+            "link": {
+              "text": "test",
+              "url": "https://www.google.co.in/"
+            },
+            "approval": "Sapient",
+            "household": "Condo",
+            "season": {
+              "name": "Summer",
+              "start": "10-10-2017",
+              "end": "01-05-2018"
+            },
+            "cluster": "cluster1"
+          }
+        ]
+      }
+    ],
+    "delivery": [
+      "Monday",
+      "Tuesday",
+      "Sunday"
+    ],
+    "time": [
+      "Morning",
+      "Before Dusk"
+    ],
+    "frequency": "Once",
+    "type": [
+      "Todays Drawer",
+      "InApp Message"
+    ],
+    "responseOptions": [
+      "Yes",
+      "No",
+      "Remind me"
+    ],
+    "homePageTip": "test",
+    "homePageTitle": "Title 2"
   }
+}

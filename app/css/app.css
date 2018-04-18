@@ -1,14 +1,43 @@
 /* app css stylesheet */
-
-
-.cms-header {
-  font-size: 24px;
-  background: grey;
-  color: #fff;
-  padding: 15px;
+body {
+  font-size:14px;
 }
 
-.menu {
+.cms-header {
+  font-size: 22px;
+  background: grey;
+  color: #fff;
+  padding: 12px;
+  float: left;
+  width: 100%;
+}
+.cms-header .cms-logo {
+  float: left;
+  width: 66%;
+}
+.cms-header .login-date {
+  float: left;
+  width: 11%;
+  font-size: 14px;
+  margin-top: 6px;
+}
+.cms-header .user-name {
+  font-size: 14px;
+  width: 12%;
+  float: left;
+  margin-top: 6px;
+}
+.cms-header .left-options {
+  float: right;
+  font-size: 14px;
+  width: 10%;
+  text-align: right;
+  margin-top: 6px;
+}
+.cms-header .left-options .seprator{
+  margin: 0 10px;
+}
+/* .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
   margin-bottom: 2em;
@@ -30,25 +59,14 @@
 .menu > li + li:before {
   content: "|";
   padding-right: 0.3em;
+} */
+
+.navbar-light .navbar-nav .nav-link {
+  color: rgba(0, 0, 0, 0.9);
+  border-right: 1px solid;
+  line-height: 4px;
 }
-.cms-nav {
-  background: #e7e7e7;
-  width: 100%;
-  display: inline-block;
-}
-.cms-nav ul{ 
-  list-style: none;
-}
-.cms-nav ul li{
-  float: left;
-  padding: 5px;
-  font-size: 14px;
-} 
-.cms-nav ul li a {
-  border-right: 1px solid grey;
-  padding-right: 10px;
-}
-.cms-nav ul li a.last {
+.navbar-nav .nav-item a.last {
   border-right: none;
 }
 
@@ -56,7 +74,7 @@
   padding: 10px;
   border: 1px solid grey;
   float: left;
-  width: 98%;
+  width: 100%;
   margin-bottom: 20px;
 }
 
@@ -71,11 +89,16 @@
   float: left;
   width:12%;
 }
-.cms-form-control {
+/* .cms-form-control {
   margin-left: 5px;
-}
+} */
 .form-group {
   margin-bottom: 5px;
+  float: left;
+  width: 100%;
+}
+.form-group select,  .form-group input, .form-group textarea{
+  width: 20%;
 }
 .checkbox-group {
   float: left;
@@ -84,20 +107,25 @@
 .chk-holder {
   float:left;
   margin-right: 20px;
+  width: 15%;
 }
 .chk-holder .chk-cms {
-  margin-top:0;
+  margin-top:6px;
+  
 }
 .time-chk-holder {
   float: left;
   width: 100%;
 }
 .chk-holder span {
-  margin-right:3px;
+  float: left;
 }
 .action-container {
   float: left;
   width: 100%;
+  text-align: center;
+}
+.add-action {
   text-align: center;
 }
 .required-indicator {
@@ -116,18 +144,75 @@
   font-size: 16px;
   color: red;
   float: left;
-  margin: 2px 2px 0 0;
 }
 .update-link-top {
   float: left;
-  width: 30%;
+  width: 45%;
   color: #0088cc;
   text-decoration: underline;
   cursor: pointer;
-  text-align: right;
   margin-bottom: 10px;
 }
+.order-title {
+  float: left;
+  margin-right: 4px;
+
+}
+
+.ng-valid[required], .ng-valid.required  {
+  border-left: 3px solid #42A948; /* green */
+}
+
+.ng-invalid:not(form)  {
+  border-left: 3px solid #a94442; /* red */
+}
+select.search-select {
+  width: 12%;
+}
+input.question-input {
+  width: 12%;
+}
 /*CMS form CSS Ends*/
+
+/* Search Strategy */
+.search-btn-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.grid {
+  width: 500px;
+  height: 250px;
+}
+#view-stragegy-grid, .cms-grid {
+  width: 100%;
+}
+#view-stragegy-grid .ui-grid-header-viewport, .cms-grid .ui-grid-header-viewport{
+  width: 100%;
+}
+.ui-grid-canvas {
+  width: 100%;
+}
+.no-data-txt {
+  position: absolute;
+  bottom: 30%;
+  text-align: center;
+  left: 45%;
+  font-size: 20px;
+}
+.no-data-question {
+  position: absolute;
+  bottom: 30%;
+  text-align: center;
+  left: 45%;
+  font-size: 20px;
+}
+input.display-order-input {
+  width: 3%;
+}
+textarea.topic-description {
+  width: 23.3%;
+}
+/**/
 
 .cms-footer {
   font-size: 24px;
@@ -137,4 +222,111 @@
   position: absolute;
   bottom: 0;
   width: 63.2%;
+}
+
+.radioButtondemoBasicUsage body {
+  padding: 20px; }
+
+.radioButtondemoBasicUsage hr {
+  margin-left: -20px;
+  opacity: 0.3; }
+
+.radioButtondemoBasicUsage md-radio-group {
+  width: 150px; }
+
+.radioButtondemoBasicUsage p:last-child {
+  padding-bottom: 50px; }
+
+.radioButtondemoBasicUsage [ng-controller] {
+  padding: 0 20px; }
+
+.radioButtondemoBasicUsage .radioValue {
+  margin-left: 5px;
+  color: #0f9d58;
+  font-weight: bold;
+  padding: 5px; }
+
+.radioButtondemoBasicUsage md-icon {
+  margin: 0 20px 20px;
+  width: 128px;
+  height: 128px; }
+
+.radioButtondemoBasicUsage .ipsum {
+  color: saddlebrown;
+  font-size: 0.9em; }
+
+  /*Edit/view Section Modal */
+  .modal-header {
+    padding: 0.4rem;
+  }
+  @media (min-width: 576px) {
+    .modal-dialog-section {
+      max-width: 95%;
+    }
+  }
+  @media (min-width: 576px) {
+    .modal-dialog-title {
+      max-width: 50%;
+    }
+  }
+
+  .btn-sm, .btn-group-sm > .btn {
+    font-size: 0.775rem;
+  }
+  
+.modal-footer-cms {
+  justify-content: center;
+  padding: 0.5rem;
+}
+.section-details-container {
+  border: 1px solid grey;
+  padding: 0.6rem;
+  float: left;
+  width: 100%;
+}
+.cms-lbl-modal {
+  width: 20%;
+}
+.cms-lbl-modal-left {
+  float: left;
+}
+.form-group textarea.cms-ctrl-modal, .form-group input.cms-ctrl-modal, .form-group select.cms-ctrl-modal {
+  width: 35%;
+}
+input.display-order-title-modal {
+  width: 5%;
+}
+input.display-order-title-modal {
+  width: 29.5%;
+}
+.add-new-btn {
+  width: 100%;
+  text-align: right;
+  margin: 5px 0;
+}
+.add-new-sec-btn-container {
+  width: 98%;
+}
+
+/*Dashboard CSS*/
+.dashboard-info {
+  border-bottom: 1px dotted grey;
+    padding: 5px 0;
+}
+.dashboard-info-last {
+  border-bottom: none;
+}
+.dashboard-info .left{
+  width: 12%;
+  font-weight: bold;
+}
+
+.dashboard-info .list-view ul{
+  list-style: none;
+}
+.dashboard-info .list-view li .left{
+  font-weight: bold;
+}
+input.chk-cms-isactive {
+  width: 1%;
 }

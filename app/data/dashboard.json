@@ -1,0 +1,15 @@
+{
+  "dashboard": {
+    "activeCustomer": 45,
+    "InactiveCustomer": 40,
+    "appAccessed": {
+        "today": 7,
+        "yesterday": 9,
+        "weekly": 35
+    },
+    "lastWeatherFeed": "10-10-2017",
+    "lastUssageFile": "10-10-2017",
+    "appInstallation": 25,
+    "accessDevice": 25
+  }
+}

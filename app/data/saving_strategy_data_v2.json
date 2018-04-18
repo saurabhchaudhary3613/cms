@@ -1,0 +1,62 @@
+{
+	"strategy_id": "CIF001",
+	"strategy_type": "Cooling",
+
+	"properties": {
+		"topic": "Cooling",
+		"savings": "Immediate",
+		"cost": "Free",
+		"effort": "Low",
+		"type": "Reoccurring"
+	},
+
+	"relations": {
+		"primary": "Cooling",
+		"primary_order": 1,
+		"secondary": "Forced Air"
+	},
+	"title": {
+		"intro": "Increase temperature in house during summer",
+		"body": "It may be warm outside, but if you set your thermostat to 25C or higher, plus wear lighter clothes, you'll be comfy and cozy and you'll enjoy an estimated 5-15% reduction in AC costs."
+	},
+	"tips": {
+		"today_drawer": {
+			"weather_related": {
+				"intro": "Don't let today's heat get you down, set your thermostat to 25C or higher",
+				"body": "It may be warm outside, but if you set your thermostat to 25C or higher, plus wear lighter clothes, you'll be comfy and cozy and you'll enjoy an estimated 5-15% reduction in AC costs."
+			},
+			"generic": {
+				"intro": "Increase temperature in the house today",
+				"body": "It may be warm outside, but if you set your thermostat to 25C or higher, plus wear lighter clothes, you'll be comfy and cozy and you'll enjoy an estimated 5-15% reduction in AC costs."
+			}
+		},
+		"tiers": {
+			"1": "Aim to do even better - increase house temperature to 25C or higher.",
+			"2": "Aim to do even better - increase house temperature to 25C or higher.",
+			"3": "Energy Tip: Stop wasting energy, increase house temperature to 25C or higher.",
+			"4": "Energy Tip: Stop wasting energy, increase house temperature to 25C or higher."
+		},
+		"in_app_message": "Peak - See how you can get a 5-15% reduction in AC costs."
+	},
+	"criteria": {
+		"household" : ["House", "Apartment"],
+		"season" : "Summer",
+		"analytic_insight_trigger": "High AC",
+		"use_without_trigger": "No",
+		"user_type" : "Both",
+		"conservation": "Yes",
+		"load_shifting": "No",
+
+		"conditions": [
+			"Central Air Conditioning (Including Blower) / Non-Central Air Conditioning (e.g. Window Units)",
+			"Thermostat <= 25C",
+			"Temp > 25C"
+		]
+	},
+	"delivery": {
+		"start_date": {"month": 8, "date": 21},
+		"end_date": {"month": 9, "date": 22},
+		"day_of_week": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+		"time_of_day": ["Morning", "Noon", "Evening", "Before Dusk"]
+	}
+}

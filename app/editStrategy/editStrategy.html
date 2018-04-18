@@ -1,180 +1,411 @@
 <div class="strategy-form-container">
-    <div class="update-link-top" ng-click="ctrl.updateInfo()">Update Information</div>
-    <div class="required-indicator"><span>*</span>Required fields</div>
-    <div class="form-section">
-        <div class="form-group">
-            <label class="cms-form-label"><span class="required">*</span>Topic</label>
-            <select required class="form-control cms-form-control" ng-disabled="ctrl.disableField">
-                <option>Topic 1</option>
-                <option>Topic 1</option>
-                <option>Topic 1</option>
-            </select>
-                    
-        </div>
-        <div class="form-group">
-            <label class="cms-form-label">Description</label>
-            <textarea class="form-control cms-form-control" ng-model="ctrl.strategyDetails.description" ng-disabled="ctrl.disableField" rows="2" cols="80">
-            </textarea>
-                    
-        </div>
-    </div>
-    <div class="form-section">
-        <div class="form-group">
-            <label class="cms-form-label">Topic</label>
-            <select ng-disabled="ctrl.disableField" class="form-control cms-form-control">
-                <option>Topic 1</option>
-                <option>Topic 2</option>
-                <option>Topic 3</option>
-            </select>
-                    
-        </div>
-        <div class="form-group">
-            <label class="cms-form-label"><span class="required">*</span>Section</label>
-            <select ng-disabled="ctrl.disableField" required class="form-control cms-form-control" multiple>
-                <option>Section 1</option>
-                <option>Section 1</option>
-                <option>Section 1</option>
-            </select>
-                    
-        </div>
-    </div>
-    <div class="form-section">
-        <div class="form-group">
-            <label class="cms-form-label">Section</label>
-            <select ng-disabled="ctrl.disableField" class="form-control cms-form-control">
-                    <option>Topic 1</option>
-                    <option>Topic 2</option>
-                    <option>Topic 3</option>
-                </select>
-        </div>
-        <div class="form-group">
-            <label class="cms-form-label">Title</label>
-            <select ng-disabled="ctrl.disableField" class="form-control cms-form-control" multiple>
-                <option>Title 1</option>
-                <option>Title 2</option>
-                <option>Title 3</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label class="cms-form-label"><span class="required">*</span>Intro</label>
-            <textarea ng-disabled="ctrl.disableField" ng-model="ctrl.strategyDetails.intro" required class="form-control cms-form-control" rows="2" cols="80"></textarea>    
-        </div>
-        <div class="form-group">
-            <label class="cms-form-label">body</label>
-            <textarea ng-disabled="ctrl.disableField"  ng-model="ctrl.strategyDetails.body" class="form-control cms-form-control" rows="2" cols="80">
-            </textarea>
-                    
-        </div>
-        <div class="form-group">
-            <label class="cms-form-label">Link</label>
-            <input type="text" ng-disabled="ctrl.disableField" ng-model="ctrl.strategyDetails.linkText" placeholder="test"/>
-            <input type="url" ng-disabled="ctrl.disableField" ng-model="ctrl.strategyDetails.linkURL" class="cms-form-control" placeholder="Url">        
-        </div>
-        <div class="form-group">
-            <label class="cms-form-label">Approval</label>
-            <select class="form-control cms-form-control" ng-disabled="ctrl.disableField">
-                    <option>Sapient</option>
-                    <option>Oshawa</option>
-                </select>
-        </div>
-        <div class="form-group">
-            <label class="cms-form-label">Household</label>
-            <select class="form-control cms-form-control" ng-disabled="ctrl.disableField">
-                <option>House</option>
-                <option>Condo</option>
-            </select>
-        </div>
-        <div class="season-date-container">
+    <form name="ctrl.editStrategyForm" novalidate>
+        <!-- <div class="update-link-top" ng-click="ctrl.updateInfo()">Update Information</div> -->
+        <div class="required-indicator"><span>*</span>Required fields</div>
+        <div class="form-section">
             <div class="form-group">
-                <label class="cms-form-label">Season</label>
-                <select class="form-control cms-form-control" ng-disabled="ctrl.disableField">
-                    <option>Summer</option>
-                    <option>Spring</option>
-                    <option>Winter</option>
-                    <option>Autumn</option>
+                <label class="cms-form-label"><span class="required">*</span>Topic</label>
+                <input type="number" class="display-order-input" placeholder="Display Order" ng-model="ctrl.strategyDetails.displayOrderTopic"/>
+                <select required ng-model="ctrl.strategyDetails.topic" ng-change="ctrl.onChangeSection(ctrl.strategyDetails.topic);" class="cms-form-control" ng-disabled="ctrl.disableField">
+                    <option ng-repeat="option in ctrl.topicOptions" value="{{option.name}}">{{option.name}}</option>
                 </select>
+                        
             </div>
-            <div class="form-group start-date">
-                <label class="cms-form-label">Start Date</label>
-                <input type="date" ng-model="ctrl.strategyDetails.startDate" ng-disabled="ctrl.disableField"/>
-            </div>
-            <div class="form-group start-end">
-                <label class="cms-form-label">End Date</label>
-                <input type="date" ng-model="ctrl.strategyDetails.endDate" ng-disabled="ctrl.disableField"/>
+            <div class="form-group">
+                <label class="cms-form-label">Description</label>
+                <textarea class=" cms-form-control topic-description" ng-model="ctrl.strategyDetails.description" ng-disabled="ctrl.disableField" rows="2" cols="80">
+                </textarea>
+                        
             </div>
         </div>
-        
-    </div>
-    <div class="form-section">
-        <div class="form-group">
-            <label class="cms-form-label"><span class="required">*</span>Delivery</label>
-            <div class="checkbox-group">
-                <div class="chk-holder"><span>D1</span><input class="form-check-input chk-cms" type="checkbox" value="" ng-disabled="ctrl.disableField" /></div>
-                <div class="chk-holder"><span>D2</span><input class="form-check-input chk-cms" type="checkbox" value="" ng-disabled="ctrl.disableField" /></div>
-                <div class="chk-holder"><span>D3</span><input class="form-check-input chk-cms" type="checkbox" value="" ng-disabled="ctrl.disableField" /></div>
+        <div class="add-new-btn add-new-sec-btn-container">
+            <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#addNewSectionModal">Add New Section</button>
+        </div>
+        <div class="form-section">
+                <div ui-grid="ctrl.gridOptionsSection" class="grid cms-grid"></div>
+        </div>
+        <!-- <div class="form-section">
+            <div class="form-group">
+                <label class="cms-form-label">Section</label>
+                <input type="number" placeholder="Display Order" ng-model="ctrl.strategyDetails.displayOrderSection"/>
+                <select ng-disabled="ctrl.disableField" ng-model="ctrl.strategyDetails.section" class=" cms-form-control">
+                    <option ng-repeat="option in ctrl.sectionOptions" value="{{option.name}}">{{option.name}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="cms-form-label"><span class="required">*</span>Title</label>
+                
+                <input type="number" placeholder="Display Order" ng-model="ctrl.strategyDetails.displayOrderTitle" class="order-title"/>
+                <select multiple ng-model="y.xs" ng-options="x.id as x.value for x in xs">
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="cms-form-label"><span class="required">*</span>Intro</label>
+                <textarea ng-disabled="ctrl.disableField" ng-model="ctrl.strategyDetails.intro" required class=" cms-form-control" rows="2" cols="80"></textarea>    
+            </div>
+            <div class="form-group">
+                <label class="cms-form-label">body</label>
+                <textarea ng-disabled="ctrl.disableField"  ng-model="ctrl.strategyDetails.body" class=" cms-form-control" rows="2" cols="80">
+                </textarea>
+                        
+            </div>
+            <div class="form-group">
+                <label class="cms-form-label">Link</label>
+                <input type="text" ng-disabled="ctrl.disableField" ng-model="ctrl.strategyDetails.linkText" placeholder="test"/>
+                <input type="url" ng-disabled="ctrl.disableField" ng-model="ctrl.strategyDetails.linkURL" class="cms-form-control" placeholder="Url">        
+            </div>
+            <div class="form-group">
+                <label class="cms-form-label"><span class="required">*</span>Approval</label>
+                <select class=" cms-form-control" ng-model="ctrl.strategyDetails.approval" required ng-disabled="ctrl.disableField">
+                    <option ng-repeat="option in ctrl.approvalOptions" value="{{option.name}}">{{option.name}}</option>
+                </select> 
                 
             </div>
-        </div>
-        <div class="form-group time-chk-holder">
-            <label class="cms-form-label"><span class="required">*</span>Time</label>
-            <div class="checkbox-group">
-                <div class="chk-holder"><span>Morning</span><input class="form-check-input chk-cms" type="checkbox" value="" ng-disabled="ctrl.disableField" /></div>
-                <div class="chk-holder"><span>Noon</span><input class="form-check-input chk-cms" type="checkbox" value="" ng-disabled="ctrl.disableField" /></div>
-                <div class="chk-holder"><span>Evening</span><input class="form-check-input chk-cms" type="checkbox" value="" ng-disabled="ctrl.disableField" /></div>
-                <div class="chk-holder"><span>Before Dusk</span><input class="form-check-input chk-cms" type="checkbox" value="" ng-disabled="ctrl.disableField" /></div>                
+            <div class="form-group">
+                <label class="cms-form-label">Household</label>
+                <select class=" cms-form-control" ng-model="ctrl.strategyDetails.household" ng-disabled="ctrl.disableField">
+                    <option ng-repeat="option in ctrl.householdOptions" value="{{option.name}}">{{option.name}}</option>
+                </select>
+                <select class=" cms-form-control" ng-model="ctrl.strategyDetails.cluster" ng-disabled="ctrl.disableField">
+                    <option ng-repeat="option in ctrl.clusterOptions" value="{{option.name}}">{{option.name}}</option>
+                </select>
+            </div>
+            <div class="season-date-container">
+                <div class="form-group">
+                    <label class="cms-form-label">Season</label>
+                    <select class=" cms-form-control" ng-model="ctrl.strategyDetails.season" ng-disabled="ctrl.disableField">
+                        <option ng-repeat="option in ctrl.seasonOptions" value="{{option.name}}">{{option.name}}</option>
+                    </select>
+                </div>
+                <div class="form-group start-date">
+                    <label class="cms-form-label">Start Date</label>
+                    <input type="date" ng-model="ctrl.strategyDetails.startDate" ng-disabled="ctrl.disableField"/>
+                </div>
+                <div class="form-group start-end">
+                    <label class="cms-form-label">End Date</label>
+                    <input type="date" ng-model="ctrl.strategyDetails.endDate" ng-disabled="ctrl.disableField"/>
+                </div>
+            </div>
+            
+        </div> -->
+        <div class="form-section">
+            <div class="form-group">
+                <label class="cms-form-label"><span class="required">*</span>Delivery</label>
+                <div class="checkbox-group">
+                    <div class="chk-holder"><span>Monday</span><input class=" chk-cms" type="checkbox" ng-checked = 'ctrl.strategyDetails.delivery1' ng-model= "ctrl.strategyDetails.delivery1"  ng-true-value="'Monday'" ng-disabled="ctrl.disableField" /></div>
+                    <div class="chk-holder"><span>Tuesday</span><input class=" chk-cms" type="checkbox" ng-checked = 'ctrl.strategyDetails.delivery2' ng-model= "ctrl.strategyDetails.delivery2"  ng-true-value="'Tuesday'" ng-disabled="ctrl.disableField" /></div>
+                    <div class="chk-holder"><span>Wednesday</span><input class=" chk-cms" type="checkbox" ng-checked = 'ctrl.strategyDetails.delivery3' ng-model= "ctrl.strategyDetails.delivery3"  ng-true-value="'Wednesday'" ng-disabled="ctrl.disableField" /></div>
+                    <div class="chk-holder"><span>Thursday</span><input class=" chk-cms" type="checkbox" ng-checked = 'ctrl.strategyDetails.delivery4' ng-model= "ctrl.strategyDetails.delivery4"  ng-true-value="'Thursday'" ng-disabled="ctrl.disableField" /></div>
+                    <div class="chk-holder"><span>Friday</span><input class=" chk-cms" type="checkbox" ng-checked = 'ctrl.strategyDetails.delivery5' ng-model= "ctrl.strategyDetails.delivery5"  ng-true-value="'Friday'" ng-disabled="ctrl.disableField" /></div>
+                    <div class="chk-holder"><span>Saturday</span><input class=" chk-cms" type="checkbox" ng-checked = 'ctrl.strategyDetails.delivery6' ng-model= "ctrl.strategyDetails.delivery6"  ng-true-value="'Saturday'"  ng-disabled="ctrl.disableField" /></div>
+                    <div class="chk-holder"><span>Sunday</span><input class=" chk-cms" type="checkbox"  ng-checked = 'ctrl.strategyDetails.delivery7' ng-model= "ctrl.strategyDetails.delivery7"  ng-true-value="'Sunday'" ng-disabled="ctrl.disableField" /></div>
+                    
+                </div>
+            </div>
+            <div class="form-group time-chk-holder">
+                <label class="cms-form-label"><span class="required">*</span>Time</label>
+                <div class="checkbox-group">
+                    <div class="chk-holder"><span>Morning</span><input class=" chk-cms" type="checkbox" ng-checked='ctrl.strategyDetails.time1' ng-model= "ctrl.strategyDetails.time1"  ng-true-value="'Morning'" ng-disabled="ctrl.disableField" /></div>
+                    <div class="chk-holder"><span>Noon</span><input class=" chk-cms" type="checkbox" ng-checked='ctrl.strategyDetails.time2' ng-model= "ctrl.strategyDetails.time2"  ng-true-value="'Noon'" ng-disabled="ctrl.disableField" /></div>
+                    <div class="chk-holder"><span>Evening</span><input class=" chk-cms" type="checkbox" ng-checked='ctrl.strategyDetails.time3' ng-model= "ctrl.strategyDetails.time3"  ng-true-value="'Evening'" ng-disabled="ctrl.disableField" /></div>
+                    <div class="chk-holder"><span>Before Dusk</span><input class=" chk-cms" type="checkbox" ng-checked='ctrl.strategyDetails.time4' ng-model= "ctrl.strategyDetails.time4"  ng-true-value="'Before Dusk'" ng-disabled="ctrl.disableField" /></div>                
+                </div>
+            </div>
+            <div class="form-group time-chk-holder">
+                <label class="cms-form-label"><span class="required">*</span>Frequency</label>
+                <div class="checkbox-group">
+                    <div class="chk-holder"><span>Daily</span><input class=" chk-cms" name="frequency" ng-model='ctrl.strategyDetails.frequency' type="radio" value="Daily" ng-disabled="ctrl.disableField" /></div>
+                    <div class="chk-holder"><span>Weekly</span><input class=" chk-cms" name="frequency" ng-model='ctrl.strategyDetails.frequency' type="radio" value="Weekly" ng-disabled="ctrl.disableField" /></div>
+                    <div class="chk-holder"><span>Monthly</span><input class=" chk-cms" name="frequency" ng-model='ctrl.strategyDetails.frequency' type="radio" value="Monthly" ng-disabled="ctrl.disableField" /></div>
+                    <div class="chk-holder"><span>Once</span><input class=" chk-cms" name="frequency" ng-model='ctrl.strategyDetails.frequency' type="radio" value="Once" ng-disabled="ctrl.disableField" /></div>
+                </div>
+            </div>
+            <div class="form-group time-chk-holder">
+                <label class="cms-form-label"><span class="required">*</span>Type</label>
+                <div class="checkbox-group">
+                    <div class="chk-holder"><span>Todays Drawer</span><input class=" chk-cms" ng-checked='ctrl.strategyDetails.type1' type="checkbox" ng-model= "ctrl.strategyDetails.type1"  ng-true-value="'Todays Drawer'" ng-disabled="ctrl.disableField" /></div>
+                    <div class="chk-holder"><span>Top Tier Tip</span><input class=" chk-cms" ng-checked='ctrl.strategyDetails.type2'  type="checkbox" ng-model= "ctrl.strategyDetails.type2"  ng-true-value="'Top Tier Tip'" value="" ng-disabled="ctrl.disableField" /></div>
+                    <div class="chk-holder"><span>Mid-Top Tier Tip</span><input class=" chk-cms" ng-checked='ctrl.strategyDetails.type3'  type="checkbox" ng-model= "ctrl.strategyDetails.type3"  ng-true-value="'Mid Top Tier Tip'" ng-disabled="ctrl.disableField" /></div>
+                    <div class="chk-holder"><span>InApp Message</span><input class=" chk-cms" ng-checked='ctrl.strategyDetails.type4'  type="checkbox" ng-model= "ctrl.strategyDetails.type4"  ng-true-value="'InApp Message'" ng-disabled="ctrl.disableField" /></div>
+                    <div class="chk-holder"><span>High Usage</span><input class=" chk-cms" ng-checked='ctrl.strategyDetails.type5'  type="checkbox" ng-model= "ctrl.strategyDetails.type5"  ng-true-value="'High Usage'" ng-disabled="ctrl.disableField" /></div>                
+                </div>
+            </div>
+            <div class="form-group time-chk-holder">
+                <label class="cms-form-label">Response Options</label>
+                <div class="checkbox-group">
+                    <div class="chk-holder"><span>Yes</span><input class=" chk-cms" type="checkbox" ng-model= "ctrl.strategyDetails.response1"  ng-true-value="'Yes'" ng-disabled="ctrl.disableField" /></div>
+                    <div class="chk-holder"><span>No</span><input class=" chk-cms" type="checkbox" ng-model= "ctrl.strategyDetails.response2"  ng-true-value="'No'" ng-disabled="ctrl.disableField" /></div>
+                    <div class="chk-holder"><span>Save</span><input class=" chk-cms" type="checkbox" ng-model= "ctrl.strategyDetails.response3"  ng-true-value="'Save'" ng-disabled="ctrl.disableField" /></div>
+                    <div class="chk-holder"><span>Done</span><input class=" chk-cms" type="checkbox" ng-model= "ctrl.strategyDetails.response4"  ng-true-value="'Done'" ng-disabled="ctrl.disableField" /></div>
+                    <div class="chk-holder"><span>Remind me</span><input class=" chk-cms" type="checkbox" ng-model= "ctrl.strategyDetails.response5"  ng-true-value="'Remind me'" ng-disabled="ctrl.disableField" /></div>                
+                </div>
             </div>
         </div>
-        <div class="form-group time-chk-holder">
-            <label class="cms-form-label"><span class="required">*</span>Frequency</label>
-            <div class="checkbox-group">
-                <div class="chk-holder"><span>Daily</span><input class="form-check-input chk-cms" type="checkbox" value="" ng-disabled="ctrl.disableField" /></div>
-                <div class="chk-holder"><span>Weekly</span><input class="form-check-input chk-cms" type="checkbox" value="" ng-disabled="ctrl.disableField" /></div>
-                <div class="chk-holder"><span>Monthly</span><input class="form-check-input chk-cms" type="checkbox" value="" ng-disabled="ctrl.disableField" /></div>
-                <div class="chk-holder"><span>Once</span><input class="form-check-input chk-cms" type="checkbox" value="" ng-disabled="ctrl.disableField" /></div>                
+        <div class="form-section">
+            <div class="form-group">
+                <label class="cms-form-label">Title</label>
+                <select class=" cms-form-control" ng-model="ctrl.strategyDetails.homePageTitle" ng-disabled="ctrl.disableField">
+                        <option ng-repeat="option in ctrl.homePageTitleOptions" value="{{option.name}}">{{option.name}}</option>
+                </select>
             </div>
+            <div class="form-group">
+                    <label class="cms-form-label">Homepage Tip</label>
+                    <input type="text" class=" cms-form-control"ng-model='ctrl.strategyDetails.homePageTip' ng-disabled="ctrl.disableField"/>
+                </div>
         </div>
-        <div class="form-group time-chk-holder">
-            <label class="cms-form-label"><span class="required">*</span>Type</label>
-            <div class="checkbox-group">
-                <div class="chk-holder"><span>Todays Drawer</span><input class="form-check-input chk-cms" type="checkbox" value="" ng-disabled="ctrl.disableField" /></div>
-                <div class="chk-holder"><span>Top Tier Tip</span><input class="form-check-input chk-cms" type="checkbox" value="" ng-disabled="ctrl.disableField" /></div>
-                <div class="chk-holder"><span>Mid-Top Tier Tip</span><input class="form-check-input chk-cms" type="checkbox" value="" ng-disabled="ctrl.disableField" /></div>
-                <div class="chk-holder"><span>InApp Message</span><input class="form-check-input chk-cms" type="checkbox" value="" ng-disabled="ctrl.disableField" /></div>
-                <div class="chk-holder"><span>High Usage</span><input class="form-check-input chk-cms" type="checkbox" value="" ng-disabled="ctrl.disableField" /></div>                
-            </div>
+        <div class="action-container">
+                <!-- <div class="update-link-top" ng-click="ctrl.updateInfo()">Update Information</div> -->
+            <button type="submit" class="btn btn-primary btn-sm" data-toggle="modal" ng-click="ctrl.submitDetails()" ng-disabled="ctrl.disableField || ctrl.editStrategyForm.$invalid">Submit</button>
         </div>
-        <div class="form-group time-chk-holder">
-            <label class="cms-form-label">Response Options</label>
-            <div class="checkbox-group">
-                <div class="chk-holder"><span>Yes</span><input class="form-check-input chk-cms" type="checkbox" value="" ng-disabled="ctrl.disableField" /></div>
-                <div class="chk-holder"><span>No</span><input class="form-check-input chk-cms" type="checkbox" value="" ng-disabled="ctrl.disableField" /></div>
-                <div class="chk-holder"><span>Save</span><input class="form-check-input chk-cms" type="checkbox" value="" ng-disabled="ctrl.disableField" /></div>
-                <div class="chk-holder"><span>Done</span><input class="form-check-input chk-cms" type="checkbox" value="" ng-disabled="ctrl.disableField" /></div>
-                <div class="chk-holder"><span>Remind me</span><input class="form-check-input chk-cms" type="checkbox" value="" ng-disabled="ctrl.disableField" /></div>                
-            </div>
-        </div>
-    </div>
-    <div class="form-section">
-        <div class="form-group">
-            <label class="cms-form-label">Title</label>
-            <select class="form-control cms-form-control" ng-disabled="ctrl.disableField">
-                <option>Title 1</option>
-                <option>Title 2</option>
-                <option>Title 3</option>
-                <option>Title 4</option>
-            </select>
-        </div>
-        <div class="form-group">
-                <label class="cms-form-label">Homepage Tip</label>
-                <input type="text" class="form-control cms-form-control" ng-disabled="ctrl.disableField"/>
-            </div>
-    </div>
-    <div class="action-container">
-            <div class="update-link-top" ng-click="ctrl.updateInfo()">Update Information</div>
-        <button type="submit" class="btn btn-primary" ng-disabled="ctrl.disableField">Submit</button>
-    </div>
-    
+        
+        <!-- Model-->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+            <div class="modal-content">
+                    <!-- <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Modal Header</h4>
+                    </div> -->
+                    <div class="modal-body">
+                        <p>Strategy informaton is updated successfully...!</p>
+                    </div>
+                    <div class="modal-footer modal-footer-cms">
+                        <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
 
-    
+            </div>
+        </div>
 
+        <!-- Section details Model-->
+        <div class="modal fade" id="sectionModal" role="dialog">
+            <div class="modal-dialog modal-dialog-section">
+                <!-- Modal content-->
+            <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Section Details</h5>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="section-details-container">
+                            <div class='form-group'>
+                                <label class="cms-form-label cms-form-label-left">Topic</label><label class="cms-form-label">{{ctrl.sectionDetails.topic}}</label>
+                            </div>
+                            <div class='form-group'>
+                                <label class="cms-form-label">Section diaplay order</label>
+                                <input type="number" placeholder="Display Order" ng-model="ctrl.sectionDetails.diasplayOrder"/>
+                            </div>
+                            <div class='form-group'>
+                                <label class="cms-form-label">Section Title</label>
+                                <select ng-model="ctrl.sectionDetails.section" ng-change="ctrl.onChangeTopic(ctrl.sectionDetails.section)" class=" cms-form-control">
+                                    <option ng-repeat="option in ctrl.sectionOptionsWTS" value="{{option.name}}">{{option.name}}</option>
+                                </select>
+                            </div>
+                            <div class="add-new-btn"><button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#addNewTitleModal">Add New Title</button></div>
+                            <div class='form-group'>
+                                <div ui-grid="ctrl.gridOptionsTitle" class="grid cms-grid"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer modal-footer-cms">
+                        <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">save</button>
+                        <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Title details Model-->
+        <div class="modal fade" id="titleModal" role="dialog">
+                <div class="modal-dialog modal-dialog-title">
+                    <!-- Modal content-->
+                <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Title Details</h5>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="section-details-container">
+                                <div class='form-group'>
+                                    <label class="cms-lbl-modal cms-lbl-modal-left">Section</label><label class="cms-form-label">{{ctrl.titleDetails.section}}</label>
+                                </div>
+                                <div class='form-group'>
+                                    <label class="cms-lbl-modal">Title</label>
+                                    <input type="number" class="display-order-title-modal" placeholder="Display order" ng-model="ctrl.titleDetails.diasplayOrder"/>
+                                    <input type="text" class="title-text-modal" ng-model="ctrl.titleDetails.title"/>
+                                </div>
+                                <div class='form-group'>
+                                    <label class="cms-lbl-modal">Intro</label>
+                                    <textarea ng-model="ctrl.titleDetails.intro" class="cms-ctrl-modal" rows="2" cols="80"></textarea>    
+                                </div>
+                                <div class='form-group'>
+                                    <label class="cms-lbl-modal">Body</label>
+                                    <textarea ng-model="ctrl.titleDetails.body" class="cms-ctrl-modal" rows="2" cols="80"></textarea>  
+                                </div>
+                                <div class='form-group'>
+                                    <label class="cms-lbl-modal">Link</label>
+                                    <input type="text" class="cms-ctrl-modal" ng-model="ctrl.titleDetails.link"/>
+                                </div>
+                                <div class='form-group'>
+                                    <label class="cms-lbl-modal">Approval</label>
+                                    <select class="cms-ctrl-modal" ng-model="ctrl.titleDetails.approval">
+                                        <option ng-repeat="option in ctrl.approvalOptions" value="{{option.name}}">{{option.name}}</option>
+                                    </select>
+                                </div>
+                                <div class='form-group'>
+                                    <label class="cms-lbl-modal">Household</label>
+                                    <select class="cms-ctrl-modal" ng-model="ctrl.titleDetails.household">
+                                        <option ng-repeat="option in ctrl.householdOptions" value="{{option.name}}">{{option.name}}</option>
+                                    </select>
+                                </div>
+                                <div class='form-group'>
+                                    <label class="cms-lbl-modal">Cluster</label>
+                                    <select class="cms-ctrl-modal" ng-model="ctrl.titleDetails.cluster">
+                                        <option ng-repeat="option in ctrl.clusterOptions" value="{{option.name}}">{{option.name}}</option>
+                                    </select>
+                                </div>
+                                <div class='form-group'>
+                                    <label class="cms-lbl-modal">Season</label>
+                                    <select class="cms-ctrl-modal" ng-model="ctrl.titleDetails.season">
+                                        <option ng-repeat="option in ctrl.seasonOptions" value="{{option.name}}">{{option.name}}</option>
+                                    </select>
+                                </div>
+                                <div class='form-group'>
+                                    <label class="cms-lbl-modal">Start Date</label>
+                                    <input type="date" class="cms-ctrl-modal" ng-model="ctrl.titleDetails.startDate"/>
+                                </div>
+                                <div class='form-group'>
+                                    <label class="cms-lbl-modal">End Date</label>
+                                    <input type="date" class="cms-ctrl-modal" ng-model="ctrl.titleDetails.endDate"/>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="modal-footer modal-footer-cms">
+                            <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">save</button>
+                            <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+    
+                </div>
+        </div>
+
+        <!-- Add New Section Modal-->
+        <div class="modal fade" id="addNewSectionModal" role="dialog">
+            <div class="modal-dialog modal-dialog-section">
+                <!-- Modal content-->
+            <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add New Section</h5>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="section-details-container">
+                            <div class='form-group'>
+                                <label class="cms-form-label cms-form-label-left">Topic</label><label class="cms-form-label"></label>
+                            </div>
+                            <div class='form-group'>
+                                <label class="cms-form-label">Section diaplay order</label>
+                                <input type="number" placeholder="Display Order" ng-model="ctrl.newSection.diasplayOrder"/>
+                            </div>
+                            <div class='form-group'>
+                                <label class="cms-form-label">Section Title</label>
+                                <select ng-model="ctrl.newSection.section" ng-change="ctrl.onChangeTopic(ctrl.newSection.section)" class=" cms-form-control">
+                                    <option ng-repeat="option in ctrl.sectionOptionsWTS" value="{{option.name}}">{{option.name}}</option>
+                                </select>
+                            </div>
+                            <div class="add-new-btn"><button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#addNewTitleModal">Add New Title</button></div>
+                            <div class='form-group'>
+                                <div ui-grid="ctrl.gridOptionsTitleSectionModal" class="grid cms-grid"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer modal-footer-cms">
+                        <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">save</button>
+                        <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Add New Title Modal-->
+        <div class="modal fade" id="addNewTitleModal" role="dialog">
+                <div class="modal-dialog modal-dialog-title">
+                    <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add New Title</h5>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="section-details-container">
+                            <div class='form-group'>
+                                <label class="cms-lbl-modal cms-lbl-modal-left">Section</label><label class="cms-form-label">{{ctrl.sectionDetails.section}}</label>
+                            </div>
+                            <div class='form-group'>
+                                <label class="cms-lbl-modal">Title</label>
+                                <input type="number" class="display-order-title-modal" placeholder="Display order" ng-model="ctrl.newTitle.diasplayOrder"/>
+                                <input type="text" class="title-text-modal" ng-model="ctrl.newTitle.title"/>
+                            </div>
+                            <div class='form-group'>
+                                <label class="cms-lbl-modal">Intro</label>
+                                <textarea ng-model="ctrl.newTitle.intro" class="cms-ctrl-modal" rows="2" cols="80"></textarea>    
+                            </div>
+                            <div class='form-group'>
+                                <label class="cms-lbl-modal">Body</label>
+                                <textarea ng-model="ctrl.newTitle.body" class="cms-ctrl-modal" rows="2" cols="80"></textarea>  
+                            </div>
+                            <div class='form-group'>
+                                <label class="cms-lbl-modal">Link</label>
+                                <input type="text" class="cms-ctrl-modal" ng-model="ctrl.newTitle.link"/>
+                            </div>
+                            <div class='form-group'>
+                                <label class="cms-lbl-modal">Approval</label>
+                                <select class="cms-ctrl-modal" ng-model="ctrl.newTitle.approval">
+                                    <option ng-repeat="option in ctrl.approvalOptions" value="{{option.name}}">{{option.name}}</option>
+                                </select>
+                            </div>
+                            <div class='form-group'>
+                                <label class="cms-lbl-modal">Household</label>
+                                <select class="cms-ctrl-modal" ng-model="ctrl.newTitle.household">
+                                    <option ng-repeat="option in ctrl.householdOptions" value="{{option.name}}">{{option.name}}</option>
+                                </select>
+                            </div>
+                            <div class='form-group'>
+                                <label class="cms-lbl-modal">Cluster</label>
+                                <select class="cms-ctrl-modal" ng-model="ctrl.newTitle.cluster">
+                                    <option ng-repeat="option in ctrl.clusterOptions" value="{{option.name}}">{{option.name}}</option>
+                                </select>
+                            </div>
+                            <div class='form-group'>
+                                <label class="cms-lbl-modal">Season</label>
+                                <select class="cms-ctrl-modal" ng-model="ctrl.newTitle.season">
+                                    <option ng-repeat="option in ctrl.seasonOptions" value="{{option.name}}">{{option.name}}</option>
+                                </select>
+                            </div>
+                            <div class='form-group'>
+                                <label class="cms-lbl-modal">Start Date</label>
+                                <input type="date" class="cms-ctrl-modal" ng-model="ctrl.newTitle.startDate"/>
+                            </div>
+                            <div class='form-group'>
+                                <label class="cms-lbl-modal">End Date</label>
+                                <input type="date" class="cms-ctrl-modal" ng-model="ctrl.newTitle.endDate"/>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="modal-footer modal-footer-cms">
+                        <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">save</button>
+                        <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </form>
+    
 </div>
